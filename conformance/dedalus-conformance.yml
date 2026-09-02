@@ -1,0 +1,108 @@
+generated: '2026-09-02'
+method: searched
+source: https://www.dedalus.com/global/en/our-offer/products/dc4h/
+note: >-
+  Dedalus publishes no machine-readable contract, so every entry below is graded against what the
+  company DECLARES on its own public pages, not against a spec that could be parsed. Nothing here is
+  verified from a served CapabilityStatement, OpenAPI or profile package; `conforms` is false wherever
+  the claim could not be confirmed against an artifact.
+standards:
+- id: fhir
+  name: HL7 FHIR
+  conforms: false
+  status: declared
+  evidence:
+    url: https://www.dedalus.com/global/en/our-offer/products/dc4h/
+    http_status: 200
+    quote: >-
+      DC4H is built on an HL7 FHIR-based longitudinal patient record, made available through an
+      FHIR-based API management component for use by third-party developed applications.
+    limitation: >-
+      No FHIR version is stated, no CapabilityStatement is served on any dedalus.com host, and no
+      implementation-guide or profile package is published. The claim cannot be verified.
+- id: hl7v2
+  name: HL7 v2 messaging
+  conforms: false
+  status: declared
+  evidence:
+    url: https://www.dedalus.com/global/en/our-offer/products/thededalus-platform/
+    http_status: 200
+    quote: Standards-based interoperability across HL7, FHIR, DICOM and SNOMED is marketed for ORBIS U.
+    limitation: No message-type inventory or conformance profile is published.
+- id: dicom
+  name: DICOM
+  conforms: false
+  status: declared
+  evidence:
+    url: https://www.dedalus.com/global/en/our-offer/products/thededalus-platform/
+    http_status: 200
+    limitation: Named as a supported imaging standard; no DICOM conformance statement is published.
+- id: snomed-ct
+  name: SNOMED CT
+  conforms: false
+  status: declared
+  evidence:
+    url: https://www.dedalus.com/global/en/our-offer/products/thededalus-platform/
+    http_status: 200
+    limitation: Named as a supported terminology; no value-set or terminology-server surface is published.
+- id: openehr
+  name: openEHR
+  conforms: false
+  status: affiliation-only
+  evidence:
+    url: https://www.dedalus.com/global/en/our-offer/products/dc4h/
+    http_status: 200
+    limitation: >-
+      Dedalus reached this catalog through the openEHR coalition harvest, but no openEHR archetype,
+      template, or CDR REST endpoint is published on a Dedalus host. Recorded as an affiliation
+      signal only, not a verified conformance.
+- id: gdpr
+  name: EU GDPR
+  conforms: true
+  status: published
+  evidence:
+    url: https://www.dedalus.com/global/en/privacy/
+    http_status: 200
+    quote: Dedalus publishes a GDPR-framed privacy notice and states GDPR compliance on its security page.
+- id: eu-mdr
+  name: EU Medical Device Regulation (medical-device software)
+  conforms: true
+  status: published
+  evidence:
+    url: https://www.dedalus.com/global/en/about-us/regulatory-compliance/
+    http_status: 200
+    quote: >-
+      "Dedalus products are medical devices that require special attention by the manufacturer for
+      safety regulations" — the regulatory-compliance page describes fulfilling medical device
+      requirements. The specific regulation number is not named on the page.
+- id: oauth2
+  name: OAuth 2.0
+  conforms: false
+  status: not-found
+  evidence:
+    url: https://www.dedalus.com/.well-known/oauth-authorization-server
+    http_status: 301
+    limitation: No authorization-server metadata and no public auth documentation on any Dedalus host.
+- id: rfc9457
+  name: RFC 9457 Problem Details
+  conforms: false
+  status: not-found
+  evidence:
+    url: https://www.dedalus.com/global/en/our-offer/products/dc4h/
+    http_status: 200
+    limitation: No public error reference exists to evaluate.
+domain_standard:
+  market: healthcare / clinical information systems
+  candidate_standards:
+  - HL7 FHIR
+  - HL7 v2
+  - DICOM
+  - openEHR
+  - IHE profiles (XDS, PIX/PDQ)
+  declared_in_contract: false
+  note: >-
+    The domain-standard signature check reads the CONTRACT, not a marketing claim. Dedalus serves no
+    contract on any probed host, so there is nothing in which a FHIR resource type, an openEHR
+    archetype id, or an IHE actor could be declared. Recorded as not-evaluable rather than as a miss:
+    the market plainly has standards and Dedalus plainly claims them, but the evidence the check
+    requires is not published.

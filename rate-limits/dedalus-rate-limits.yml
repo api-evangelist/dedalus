@@ -1,0 +1,21 @@
+generated: '2026-09-02'
+method: searched
+source: https://www.dedalus.com/global/en/our-offer/products/dc4h/
+limit_count: 0
+rate_limits: []
+response_headers: []
+exhaustion_status_code: null
+note: >-
+  No published rate limits. Dedalus documents no public API reference on any dedalus.com host, so
+  there is no page on which throttling, quotas, burst allowances or RateLimit/Retry-After response
+  headers could be documented. This is an absence of documentation, not an observed absence of
+  limits — the DC4H FHIR API management component certainly enforces something, but nothing about
+  it is published. No RateLimits pointer is emitted in apis.yml, because emitting one would credit
+  Dedalus with a runtime signal it does not publish.
+evidence:
+- url: https://www.dedalus.com/global/en/our-offer/products/dc4h/
+  http_status: 200
+  finding: Marketing description of "API Management ensuring secure access to patient data"; no limits stated.
+- url: https://www.dedalus.com/openapi.json
+  http_status: 301
+  finding: No contract served from which limits could be derived.

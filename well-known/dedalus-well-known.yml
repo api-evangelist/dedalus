@@ -1,0 +1,65 @@
+generated: '2026-09-02'
+method: probed
+source: live HTTP probes of https://www.dedalus.com/.well-known/* and root discovery paths
+note: >-
+  Every probed path returned HTTP 301 to the corporate homepage (https://www.dedalus.com/global/en/),
+  which is the WordPress catch-all on this host, not a served document. Following the redirect yields
+  a 200 HTML marketing page, so a naive follow-redirect probe would read as a false positive. No
+  well-known document is served, therefore NO WellKnown or SecurityTxt pointer is emitted in apis.yml.
+hosts:
+- host: www.dedalus.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 301
+    file: null
+    note: 301 -> https://www.dedalus.com/global/en/ (site-wide catch-all, not a document)
+  - path: /.well-known/openid-configuration
+    status: 301
+    file: null
+    note: 301 -> corporate homepage
+  - path: /.well-known/oauth-authorization-server
+    status: 301
+    file: null
+    note: 301 -> corporate homepage
+  - path: /.well-known/api-catalog
+    status: 301
+    file: null
+    note: 301 -> corporate homepage
+  - path: /.well-known/ai-plugin.json
+    status: 301
+    file: null
+    note: 301 -> corporate homepage
+  - path: /.well-known/agent-card.json
+    status: 301
+    file: null
+    note: 301 -> corporate homepage; no A2A agent card. Nothing written to a2a/.
+  - path: /.well-known/agent.json
+    status: 301
+    file: null
+    note: 301 -> corporate homepage (legacy pre-0.3 path also absent)
+  - path: /llms.txt
+    status: 301
+    file: null
+    note: 301 -> corporate homepage
+  - path: /openapi.json
+    status: 301
+    file: null
+    note: 301 -> corporate homepage
+  - path: /sitemap.xml
+    status: 301
+    file: null
+    note: 301 -> corporate homepage; no XML sitemap served despite a human /global/en/sitemap/ page
+  - path: /robots.txt
+    status: 200
+    file: null
+    note: >-
+      Served (WordPress default). Allows all; disallows /wp-content/plugins/, /wp-admin/,
+      /readme.html, /refer/. Names no sitemap.
+  - path: /wp-json/
+    status: 200
+    file: null
+    note: >-
+      WordPress core REST API of the corporate marketing site (355 routes, all WordPress core +
+      plugin routes: contact-form-7, redirection, relevanssi, yoast, wpml, wp/v2). This is the CMS
+      behind dedalus.com, NOT a Dedalus healthcare product API, and is deliberately NOT registered
+      as an API in apis.yml.

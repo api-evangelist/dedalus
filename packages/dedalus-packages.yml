@@ -1,0 +1,48 @@
+generated: '2026-09-02'
+method: searched
+source: >-
+  registry.npmjs.org search, pypi.org, github.com/Dedalus-healthcare-ohc, and the dedalus.com
+  product pages
+package_count: 0
+packages: []
+note: >-
+  Dedalus Group publishes no first-party client libraries in any public registry. Its only public
+  GitHub presence, https://github.com/Dedalus-healthcare-ohc ("Open Health Connect | DC4H-Core",
+  3 public repos), contains two forks of the MauroDataMapper project (mauro-micronaut, mdm-ui) and a
+  .github profile repo — no Dedalus-authored SDK and no published package. No SDKs pointer is
+  emitted in apis.yml because no first-party SDK exists.
+name_collision_warning: >-
+  A registry search for "dedalus" is dominated by packages that belong to OTHER companies and must
+  never be attributed to Dedalus Group. Recorded here so a later enrichment round does not
+  mis-attribute them.
+excluded_by_ownership:
+- name: dedalus
+  registry: npm
+  version: 0.4.0
+  published: '2026-05-12'
+  owner: Dedalus Labs (dedaluslabs.ai)
+  reason: >-
+    "The official TypeScript library for the Dedalus API" — repo dedalus-labs/dedalus-typescript.
+    Dedalus Labs is a US AI/LLM-routing startup, unrelated to Dedalus Group healthcare software.
+- name: dedalus-labs
+  registry: npm
+  version: 0.1.0-alpha.8
+  published: '2025-11-26'
+  owner: Dedalus Labs (dedaluslabs.ai)
+  reason: Same vendor as above.
+- name: dedalus-mcp
+  registry: npm
+  version: 0.4.0
+  published: '2026-05-12'
+  owner: Dedalus Labs (dedaluslabs.ai)
+  reason: >-
+    "The official MCP Server for the Dedalus API" — belongs to Dedalus Labs, NOT Dedalus Group.
+    Attributing this would have credited a European EHR vendor with an MCP server it does not ship.
+- name: dedalus
+  registry: pypi
+  version: null
+  published: null
+  owner: Dedalus Project (dedalus-project.org)
+  reason: >-
+    Spectral PDE solver for computational fluid dynamics. Unrelated to either Dedalus company.
+    Version not read — the package is excluded on ownership, so its currency is irrelevant.

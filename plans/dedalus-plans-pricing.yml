@@ -1,0 +1,18 @@
+generated: '2026-09-02'
+method: searched
+source: https://www.dedalus.com/global/en/contact-us/
+plan_count: 0
+plans: []
+currency: null
+note: >-
+  Dedalus publishes no pricing, plans, tiers or quotas of any kind. It sells enterprise clinical
+  information systems to hospitals, laboratories and national health services through tender and
+  direct-sales motions; every product page (DC4H, ORBIS U, The Dedalus Platform) terminates in a
+  "request a demo" / "contact us" form rather than a price. An honest zero, not a gap in this pass.
+evidence:
+- url: https://www.dedalus.com/global/en/our-offer/products/dc4h/
+  http_status: 200
+  finding: Product page; no pricing, only a demo-request call to action.
+- url: https://www.dedalus.com/global/en/contact-us/
+  http_status: 200
+  finding: Contact form is the entry point for commercial engagement.
