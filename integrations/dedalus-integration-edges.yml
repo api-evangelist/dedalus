@@ -19,7 +19,7 @@ edges:
   - Dedalus Care
   - InVitroLIS
   - Dedalus Command Centre
-  - DeepUnity PACSonWEB
+  - Swiftqueue
   seller_name: Dedalus
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
